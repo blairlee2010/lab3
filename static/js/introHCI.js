@@ -13,7 +13,6 @@ function initializePage() {
 		$('.jumbotron h1').text("Javascript is connected");
         $("#testjs").text("Just got clicked!")
         $(".jumbotron p").toggleClass("active");
-        $("#submitBtn").click(updateProject);
 
         //$(".jumbotron p").addClass("active");
 	});
@@ -22,13 +21,12 @@ function initializePage() {
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
     $("a.thumbnail").click(projectClick);
+    $("#submitBtn").click(updateProject);
 }
 
 /*
-function projectClick(e) {
-    
+function projectClick(e) {  
     console.log("Project clicked");
-    
     // prevent the page from reloading     
     e.preventDefault();
     // In an event handler, $(this) refers to     
@@ -64,12 +62,11 @@ function projectClick(e) {
     }
 }
 
-
 function updateProject(e) {
-    var projectID = $('#project').val();
+    var projectID = $("#project").val();
    $(projectID).animate({
-      width: $('#width').val()
+      width: $("#width").val()
    });
-    var newText = $('#description').val();
+    var newText = $("#description").val();
     $(projectID + " .project-description").text(newText);
 }
